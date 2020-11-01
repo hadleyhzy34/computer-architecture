@@ -193,6 +193,26 @@ Correct
 This works, because And expects single bits as input 'a' and 'b'.
 
 
+## Project
+Elementary logic gates:
+
+16-bit variants:
+
+Multi-way variants:
+
+
+* Multiplexor
+input: a, b
+output: out
+
+```
+if(sel==0)
+	out=a
+else
+	out=b
+```
+
+
 
 
 
