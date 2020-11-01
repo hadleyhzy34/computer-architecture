@@ -122,5 +122,78 @@ For each chip, the architect creates
 
 * given these resources, the develoeprs can build the chips
 
+## Multi-bit Buses
+
+<!-- adds three 16-bit values -->
+Add16(a=first, b=second, out=temp);
+Add16(a=temp, b=third, out=out);
+
+<!-- Ands together all 4 bits of the input -->
+
+AND(a=a[0], b=a[1], out=t01);
+AND(a=t01, b=a[2], out=t02);
+AND(a=t02, b=a[3], out=t03);
+
+
+<!-- computes a bit-wise and of its two 4-bit  -->
+AND(a=a[0], b=b[0], out=out[0]);
+AND(a=a[1], b=b[1], out=out[1]);
+AND(a=a[2], b=b[2], out=out[2]);
+
+Practice:
+This is the interface declaration for an example chip named Example16, which we haven't discussed before:
+```
+IN c, Bus1[16], Bus2[16];
+
+OUT out, out2[16];
+```
+
+Which of these lines are valid in HDL, when implementing the Example16 chip?
+
+
+1. Add16(a=Bus1[0..15], b=Bus2[0..15], out=out2[0..14]);
+
+Un-selected is correct 
+Add16(a=Bus1[0..15], b=Bus2[0..15], out=out2[0..14]);
+
+is not selected.This is correct.
+
+2. Add16(a=Bus1[0..15], b=Bus2[0..15], out[0..14]=out2[0..14]);
+
+Correct 
+out[0..14]=out2[0..14] means that we're discarding the most significant bit of Add16's out, and using the rest to connect to the 15 least significant bits of Example16's out2.
+
+3. Add16(a=Bus1[0..15], b=Bus2[0..15], out[0..14]=out2[0..14]);
+
+is selected.This is correct.
+out[0..14]=out2[0..14] means that we're discarding the most significant bit of Add16's out, and using the rest to connect to the 15 least significant bits of Example16's out2.
+
+
+4. Add16(a=true, b=false, out=out2);
+
+Correct 
+As was mentioned previously in the lecture, true and false can represent a bus with constant signal of arbitrary width.
+
+Add16(a=true, b=false, out=out2);
+
+is selected.This is correct.
+As was mentioned previously in the lecture, true and false can represent a bus with constant signal of arbitrary width.
+
+
+5. Add16(a=c, b=Bus2[0..15], out=out2);
+
+Un-selected is correct 
+Add16(a=c, b=Bus2[0..15], out=out2);
+
+is not selected.This is correct.
+
+And(a=c, b=Bus2[7], out=out);
+
+Correct 
+This works, because And expects single bits as input 'a' and 'b'.
+
+
+
+
 
 
