@@ -26,10 +26,7 @@ x OR y = NOT(NOT(x)) OR NOT(NOT(y))=NOT(NOT(x) AND NOT(y))
 * Theorem:
 Any Boolean fcuntion can be represented usign an expression containing `AND` , `OR` and `NOT` expression.
 
--> `AND` and `NOT` expression by using De Morgan Laws
-
-x Or y = 
-
+-> `AND` and `NOT` expression by using De Morgan Laws  
 
 NAND(x,y) is defined to be NOT(x AND y)
 
@@ -63,7 +60,67 @@ truth table:
 | 1 | 0 | 0 |
 | 1 | 1 | 0 |
 
+Gate Interface/Gate Implementation
 
+
+XOR gates:
+truth table
+
+| a | b |out|
+|---|---|---|
+| 0 | 0 | 0 |  
+| 0 | 1 | 1 |   
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+
+general idea:
+out=1 when:
+a And NOT(b)
+Or
+b And NOT(a)
+
+generate diagram/gate interface:
+![xor_gates]()
+
+
+HDL interface:
+```hdl
+CHIP Xor{                      //interface:unique
+	IN a,b;
+	OUT out;
+
+	PARTS:						//implementation:varies
+	Not(in=a,out=nota);
+	Not(in=b,out=notb);
+	And(a=a,b=notb,out=aAndNotb);
+	And(a=nota,b=b,out=notaAndb);
+	Or(a=aAndNotb,b=notaAndb,out=out); 
+}
+```
+
+## Hardware Simulator
+```bash
+~/Desktop/nand2tetris/tools/HardwareSimulator.sh
+```
+check and test `Xor.hdl`
+
+## Script-based simulation
+
+check `Xor.tst`
+
+Benefits:
+* `automatic` testign
+* replicable testing
+
+Hardware construction projects:
+
+* system architects
+For each chip, the architect creates
+1. a chip API
+2. a test script
+3. a compare file
+
+* given these resources, the develoeprs can build the chips
 
 
 
