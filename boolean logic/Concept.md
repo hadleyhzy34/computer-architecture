@@ -230,9 +230,13 @@ else
 
 
 Examples:
+
+
 ![mux](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/mux_etc.png)
 
 * And16
+
+
 ![and16](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/add16.png)
 
 Chip Implementation Notes:
