@@ -80,7 +80,7 @@ Or
 b And NOT(a)
 
 generate diagram/gate interface:
-![xor_gates](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/xor_gates.png)
+![xor_gates](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/xor_gate.png)
 
 
 HDL interface:
