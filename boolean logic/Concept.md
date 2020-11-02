@@ -73,14 +73,14 @@ truth table
 | 1 | 0 | 1 |
 | 1 | 1 | 0 |
 
-general idea:
+general idea:  
 out=1 when:
 a And NOT(b)
 Or
 b And NOT(a)
 
 generate diagram/gate interface:
-![xor_gates]()
+![xor_gates](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/xor_gates.png)
 
 
 HDL interface:
@@ -230,10 +230,10 @@ else
 
 
 Examples:
-![mux]()
+![mux](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/mux_etc.png)
 
 * And16
-![and16]()
+![and16](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/add16.png)
 
 Chip Implementation Notes:
 Multi-bit busses are indexed right to left:
