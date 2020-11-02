@@ -1,0 +1,69 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Mux16.hdl
+
+/**
+ * 16-bit multiplexor: 
+ * for i = 0..15 out[i] = a[i] if sel == 0 
+ *                        b[i] if sel == 1
+ */
+
+CHIP Mux16 {
+    IN a[16], b[16], sel;
+    OUT out[16];
+
+    PARTS:
+    // Put your code here:
+    Not(in=sel,out=nsel);
+    And(a=a[0],b=nsel,out=a0nsel);
+    And(a=a[1],b=nsel,out=a1nsel);
+    And(a=a[2],b=nsel,out=a2nsel);
+    And(a=a[3],b=nsel,out=a3nsel);
+    And(a=a[4],b=nsel,out=a4nsel);
+    And(a=a[5],b=nsel,out=a5nsel);
+    And(a=a[6],b=nsel,out=a6nsel);
+    And(a=a[7],b=nsel,out=a7nsel);
+    And(a=a[8],b=nsel,out=a8nsel);
+    And(a=a[9],b=nsel,out=a9nsel);
+    And(a=a[10],b=nsel,out=a10nsel);
+    And(a=a[11],b=nsel,out=a11nsel);
+    And(a=a[12],b=nsel,out=a12nsel);
+    And(a=a[13],b=nsel,out=a13nsel);
+    And(a=a[14],b=nsel,out=a14nsel);
+    And(a=a[15],b=nsel,out=a15nsel);
+
+    And(a=b[0],b=sel,out=b0sel);
+    And(a=b[1],b=sel,out=b1sel);
+    And(a=b[2],b=sel,out=b2sel);
+    And(a=b[3],b=sel,out=b3sel);
+    And(a=b[4],b=sel,out=b4sel);
+    And(a=b[5],b=sel,out=b5sel);
+    And(a=b[6],b=sel,out=b6sel);
+    And(a=b[7],b=sel,out=b7sel);
+    And(a=b[8],b=sel,out=b8sel);
+    And(a=b[9],b=sel,out=b9sel);
+    And(a=b[10],b=sel,out=b10sel);
+    And(a=b[11],b=sel,out=b11sel);
+    And(a=b[12],b=sel,out=b12sel);
+    And(a=b[13],b=sel,out=b13sel);
+    And(a=b[14],b=sel,out=b14sel);
+    And(a=b[15],b=sel,out=b15sel);
+
+    Or(a=a0nsel,b=b0sel,out=out[0]);
+    Or(a=a1nsel,b=b1sel,out=out[1]);
+    Or(a=a2nsel,b=b2sel,out=out[2]);
+    Or(a=a3nsel,b=b3sel,out=out[3]);
+    Or(a=a4nsel,b=b4sel,out=out[4]);
+    Or(a=a5nsel,b=b5sel,out=out[5]);
+    Or(a=a6nsel,b=b6sel,out=out[6]);
+    Or(a=a7nsel,b=b7sel,out=out[7]);
+    Or(a=a8nsel,b=b8sel,out=out[8]);
+    Or(a=a9nsel,b=b9sel,out=out[9]);
+    Or(a=a10nsel,b=b10sel,out=out[10]);
+    Or(a=a11nsel,b=b11sel,out=out[11]);
+    Or(a=a12nsel,b=b12sel,out=out[12]);
+    Or(a=a13nsel,b=b13sel,out=out[13]);
+    Or(a=a14nsel,b=b14sel,out=out[14]);
+    Or(a=a15nsel,b=b15sel,out=out[15]);
+}

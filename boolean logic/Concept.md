@@ -212,7 +212,36 @@ else
 	out=b
 ```
 
+* Demultiplexor
 
+if(sel==0)
+	{a,b}={in,0}
+else
+	{a,b}={0,in}
+
+
+
+| in  | sel |  a  |  b  |
+| --- | --- | --- | --- |
+|  0  |  0  |  0  |  0  |
+|  0  |  1  |  0  |  0  | 
+|  1  |  0  |  1  |  0  |
+|  1  |  1  |  0  |  1  |
+
+
+Examples:
+![mux]()
+
+* And16
+![and16]()
+
+Chip Implementation Notes:
+Multi-bit busses are indexed right to left:
+If A is a 16-bit bus, then A[0] is the right-most bit, and A[15] is the left-most bit
+
+
+
+	
 
 
 
