@@ -49,7 +49,7 @@ Addition is Modulo <img src="http://www.sciweavers.org/tex2img.php?eq=%202%5E%7B
 
 4. How to compute -x
 
-<img src="http://www.sciweavers.org/tex2img.php?eq=2%5E%7Bn%7D-x%3D%201%2B%28%282%5E%7Bn%7D-1%29-x%29%3D1%2B%28-x%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="2^{n}-x= 1+((2^{n}-1)-x)=1+(-x)" width="307" height="19" />
+<a href="https://www.codecogs.com/eqnedit.php?latex=2^{n}-x=&space;1&plus;((2^{n}-1)-x)=1&plus;(-x)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?2^{n}-x=&space;1&plus;((2^{n}-1)-x)=1&plus;(-x)" title="2^{n}-x= 1+((2^{n}-1)-x)=1+(-x)" /></a>
 
 
 ## Arithmetic Logic Unit
