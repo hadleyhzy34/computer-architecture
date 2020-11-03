@@ -6,9 +6,14 @@
 
 
 1. Half Adder, two bits addition
+
+
 ![half_adder](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/Half_adder.png)
 
+
 2. Full Adder, three bits addition
+
+
 ![full_adder](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/full_adder.png)
 
 
@@ -47,6 +52,8 @@ Addition is Modulo <img src="https://latex.codecogs.com/svg.latex? 2^{n}" title=
 
 
 ## Arithmetic Logic Unit
+
+
 ![alu](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/hack_alu.png)
 
 
