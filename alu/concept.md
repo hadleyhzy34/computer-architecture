@@ -45,10 +45,11 @@
 
 3. Negative Number addition
 
-Addition is Modulo <img src="https://latex.codecogs.com/svg.latex? 2^{n}" title="x_{ij}" />
+Addition is Modulo <img src="http://www.sciweavers.org/tex2img.php?eq=%202%5E%7Bn%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt=" 2^{n} " width="24" height="17" />
 
 4. How to compute -x
-<img src="https://latex.codecogs.com/svg.latex? 2^{n}-x= 1+((2^{n}-1)-x)=1+(-x)" title="x_{ij}" />
+
+<img src="http://www.sciweavers.org/tex2img.php?eq=2%5E%7Bn%7D-x%3D%201%2B%28%282%5E%7Bn%7D-1%29-x%29%3D1%2B%28-x%29&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="2^{n}-x= 1+((2^{n}-1)-x)=1+(-x)" width="307" height="19" />
 
 
 ## Arithmetic Logic Unit
