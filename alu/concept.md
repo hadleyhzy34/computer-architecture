@@ -45,7 +45,7 @@
 
 3. Negative Number addition
 
-Addition is Modulo <img src="http://www.sciweavers.org/tex2img.php?eq=%202%5E%7Bn%7D%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt=" 2^{n} " width="24" height="17" />
+Addition is Modulo <a href="https://www.codecogs.com/eqnedit.php?latex=2^{n}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?2^{n}" title="2^{n}" /></a>
 
 4. How to compute -x
 
