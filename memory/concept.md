@@ -4,7 +4,7 @@
 
 * Dealing with time:
 
-![clock](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/sequential_diagram.png)
+![clock](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/c_s_logic.png)
 
 * Combinatorial Logic:
 Combinatorial: out[t] = function(int[t])
@@ -14,11 +14,11 @@ Sequential: out[t] = function(int[t])
 
 ### dff
 
-![dff](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/dff.png)
+![dff](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/flip_flop.png)
 
 * General way to build memory and counter
 
-![diagram](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/sli.png)
+![diagram](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/se_chips.png)
 
 ## 1-bit register
 
