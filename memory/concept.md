@@ -4,26 +4,28 @@
 
 * Dealing with time:
 
-![]()
+![clock](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/sequential_diagram.png)
 
 * Combinatorial Logic:
 Combinatorial: out[t] = function(int[t])
 
-Sequential: out[t] = function(int[t])
-
-
-
+Sequential: out[t] = function(int[t])  
 ## Flip Flops
 
 ### dff
 
-![dff]()
+![dff](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/dff.png)
 
 * General way to build memory and counter
 
-### bit chip 
+![diagram](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/sli.png)
 
-![]()
+## 1-bit register
+
+![1bit_register](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/1_bit_register.png)
+
+## Multi-bit register
+![multibit](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/multibit_register.png)
 
 ### difference between dff and bit chip
 
@@ -40,6 +42,7 @@ reset: fetch the first instruction
 next: fetch the next instruction
 goto: fetch instruction n
 
+![pc](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/pc.png)
 
-### Counter abstraction
+
 
