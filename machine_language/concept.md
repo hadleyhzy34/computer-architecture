@@ -31,6 +31,15 @@ Semantics:
 
 c-instructions
 
+Syntax: `dest = comp ; jump` (both dest and jump are optional)
+dest = null, M, D, MD, A, AM, AD, AMD
+jump = null, JGT, JEQ, JGE, JLT, JNE, JLE, JMP
+
+Semantics:
+* computes the values of `comp`
+* stores the result in `dest`
+* if the boolean expression(comp jump 0) is true, jumps to execute the instruction at ROM[A]
+
 M-registers
 
 
