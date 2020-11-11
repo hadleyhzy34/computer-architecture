@@ -60,6 +60,99 @@ else
 
 Hack CPU Operation
 
+## The Hack Computer
+Abstraction:
+A computer capable of running programs written in the Hack machine language
+
+Implementation:
+build from the hack chip-set
+
+### CPU
+
+* Hack CPU Operation
+
+input: inM, instruction, reset
+output: outM, writeM, addressM, pc
+
+* jump situation
+
+@100
+D=D-1;JEQ
+
+if(reset==0)
+	the CPU logic uses the instruction's jump bits and the ALU's output to decide if there should be a jump
+	if jump: pc is set to the value of the A-register
+	else: pc++
+	the updated pc value is emitted by pc
+if(reset==1)
+	pc is set to 0, pc emits 0(causing a program restart)
+
+
+### data memory
+
+![memory_implementation]()
+
+address_size = 15
+address bits(3bits abstraction map+12 bits address contents)
+
+abstraction:
+address 0 to 16383(3FFF): data memory
+address 16384(4000) to 24575(5FFF): screen memory map
+address 24576(6000): keyboard map
+
+
+
+
+Memory->RAM, Screen(8K memory map), Keyboard
+
+* reset
+1. load the program into the ROM
+2. press "reset"
+3. the program starts running
+
+hardware implementation: plug-and-play ROM chips
+hardware simulation: programs are stored in text files; program loading is emulated by the built-in ROM chip
+
+### ROM interface
+
+read only
+connect it to pc
+
+
+### Hack Computer implementation
+
+![ppt_hack]()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
