@@ -40,5 +40,50 @@ CHIP CPU {
 
     PARTS:
     // Put your code here:
+    Mux16(a=instruction,b=outM,sel=instruction[0],out=ain);
+
+    //A register load bits
+    And(a=instruction[0],b=instruction[10],out=loada);
+
+    //A register operation
+    Register(in=ain,load=loada,out=addressM);
     
+    //load bits before alu
+    And(a=instruction[0],b=instruction[11],out=loadmux);
+
+    //mux16 operation
+    Mux16(a=addressM,b=inM,load=loadmux,out=muxout);
+
+    //alu operation
+
+    //alu control bits
+    And(a=instruction[0],b=instruction[4],out=zxin);
+    And(a=instruction[0],b=instruction[5],out=nxin);
+    And(a=instruction[0],b=instruction[6],out=zyin);
+    And(a=instruction[0],b=instruction[7],out=nyin);
+    And(a=instruction[0],b=instruction[8],out=fin);
+    And(a=instruction[0],b=instruction[9],out=noin);
+
+
+    ALU(x=dout ,y=muxout ,zx=zxin ,nx=nxin ,zy=zyin ,ny=nyin ,f=fin ,no=noin ,out=outM,zr=zrout ,ng=ngout );
+
+    //D register
+
+    //load bit for D register
+    And(a=instruction[0],b=instruction[11],out=loadd);
+
+    //D register operation
+    Register(in=outM,load=loadd,out=dout);
+
+    //control bits for writeM
+    And(a=instruction[12],b=instruction[0],out=writeM);
+
+
+    //pc
+    PC(in=addressM ,load= ,inc= ,reset=reset ,out=pc ) /* Program Counter */
+
+
+
+
+
 }
