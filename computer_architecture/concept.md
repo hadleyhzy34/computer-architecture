@@ -96,12 +96,18 @@ build from the hack chip-set
 
 ### CPU
 
+![cpu_implementation](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/cpu_implementation.png)
+
+
 * Hack CPU Operation
 
 input: inM, instruction, reset
 output: outM, writeM, addressM, pc
 
 * jump situation
+
+![control_bits](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/control_bits.png)
+
 
 @100
 D=D-1;JEQ
@@ -117,7 +123,7 @@ if(reset==1)
 
 ### data memory
 
-![memory_implementation]()
+![memory_implementation](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/memory_implementation.png)
 
 address_size = 15
 address bits(3bits abstraction map+12 bits address contents)
@@ -148,7 +154,7 @@ connect it to pc
 
 ### Hack Computer implementation
 
-![ppt_hack]()
+![ppt_hack](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/computer_implementation.png)
 
 
 
