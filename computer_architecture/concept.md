@@ -8,6 +8,33 @@
 
 1. CPU interface
 
+Input:
+inM:
+from data memory, data value
+
+instruction:
+from instruction memory
+
+reset:
+from user
+
+output:
+
+to data memory:
+* outM
+data value
+
+* writeM
+wrtie to memory(yes/no)
+
+* addressM
+memory address
+
+to instruction memory:
+* pc
+address of next instruction
+
+
 2. CPU Implementation
 
 * instruction handling

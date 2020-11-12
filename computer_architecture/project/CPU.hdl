@@ -40,50 +40,55 @@ CHIP CPU {
 
     PARTS:
     // Put your code here:
-    Mux16(a=instruction,b=outM,sel=instruction[0],out=ain);
+
+    //the first mux16
+    Mux16(a=instruction,b=aluout,sel=instruction[15],out=ain);
 
     //A register load bits
-    And(a=instruction[0],b=instruction[10],out=loada);
+    Not(in=instruction[15], out=not-instruction15);
+    Or(a=not-instruction15, b=instruction[5], out=loada);
 
     //A register operation
-    Register(in=ain,load=loada,out=addressM);
-    
-    //load bits before alu
-    And(a=instruction[0],b=instruction[11],out=loadmux);
+    ARegister(in=ain,load=loada,out[0..14]=addressM,out=aout);
 
-    //mux16 operation
-    Mux16(a=addressM,b=inM,load=loadmux,out=muxout);
+    //second mux16 operation, instruction[12] check whether it's a register or m register
+    Mux16(a=aout,b=inM,sel=instruction[12],out=muxout);
 
     //alu operation
 
     //alu control bits
-    And(a=instruction[0],b=instruction[4],out=zxin);
-    And(a=instruction[0],b=instruction[5],out=nxin);
-    And(a=instruction[0],b=instruction[6],out=zyin);
-    And(a=instruction[0],b=instruction[7],out=nyin);
-    And(a=instruction[0],b=instruction[8],out=fin);
-    And(a=instruction[0],b=instruction[9],out=noin);
+    And(a=instruction[11],b=instruction[15],out=zxin);
+    And(a=instruction[10],b=instruction[15],out=nxin);
+    Or(a=instruction[9],b=not-instruction15,out=zyin);
+    Or(a=instruction[8],b=not-instruction15,out=nyin);
+    And(a=instruction[7],b=instruction[15],out=fin);
+    And(a=instruction[6],b=instruction[15],out=noin);
 
 
-    ALU(x=dout ,y=muxout ,zx=zxin ,nx=nxin ,zy=zyin ,ny=nyin ,f=fin ,no=noin ,out=outM,zr=zrout ,ng=ngout );
-
-    //D register
+    ALU(x=dout ,y=muxout ,zx=zxin ,nx=nxin ,zy=zyin ,ny=nyin ,f=fin ,no=noin ,out=outM, out=aluout, zr=zero ,ng=neg);
 
     //load bit for D register
-    And(a=instruction[0],b=instruction[11],out=loadd);
+    And(a=instruction[4],b=instruction[15],out=loadd);
 
     //D register operation
-    Register(in=outM,load=loadd,out=dout);
+    DRegister(in=aluout,load=loadd,out=dout);
 
     //control bits for writeM
-    And(a=instruction[12],b=instruction[0],out=writeM);
+    And(a=instruction[15],b=instruction[3],out=writeM);
 
+    //prepare for jump, pos is 1 if output is positive
+    Or(a=zero,b=neg,out=notpos);
+    Not(in=notpos,out=pos);
+
+    And(a=instruction[0],b=pos,out=j3);//j3
+    And(a=instruction[1],b=zero,out=j2);//j2
+    And(a=instruction[2],b=neg,out=j1);//j1
+
+    Or(a=j1,b=j2,out=j12);
+    Or(a=j12,b=j3,out=j123);
+
+    And(a=j123,b=instruction[15],out=jump);
 
     //pc
-    PC(in=addressM ,load= ,inc= ,reset=reset ,out=pc ) /* Program Counter */
-
-
-
-
-
+    PC(in=aout ,load=jump ,inc=true ,reset=reset ,out[0..14]=pc);
 }
