@@ -96,6 +96,12 @@ build from the hack chip-set
 
 ### CPU
 
+* CPU input, output interface
+
+![cpu_interface](https://github.com/hadleyhzy34/computer-architecture/blob/main/source/cpu_interface.png)
+
+* CPU implementation
+
 ![cpu_implementation](https://raw.githubusercontent.com/hadleyhzy34/computer-architecture/main/source/cpu_implementation.png)
 
 
